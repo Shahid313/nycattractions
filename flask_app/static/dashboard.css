@@ -1,0 +1,69 @@
+.Post-page-Background{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    justify-content: center;
+
+}
+
+.WelcomeDev{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.MakeNewpost{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 20px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.Post{
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.Post_image{
+    width: 200px;
+    height: 100px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.updateDeleteButtons{
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    justify-content: space-around;
+}
+
+.SinglePost{
+    margin-top: 20px;
+}
+
+.ContAndLikeBtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ProfieDetailsButtons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+}

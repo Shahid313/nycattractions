@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="{{url_for('static', filename='dashboard.css')}}" rel="stylesheet"/>
+</head>
+
+<body>
+    <div class="Post-page-Background">
+        <div class="WelcomeDev">
+            <h4>Welcome to NYC Attractions, Khan!!</h4>
+            <a href="/logout" class="btn btn-sm btn-danger">Logout</a>
+        </div>
+
+        <div class="MakeNewpost">
+            <h4>Add New Attraction</h4>
+            <a href="/new" class="btn btn-sm btn-dark">Post</a>
+        </div>
+
+        <table class="table table-sm SinglePost">
+            
+            <tbody>
+            {% for post in posts %}
+              <tr style="margin-bottom: 10px;">
+                <td><a style="list-style-type:none;" href="/profile_details/{{post.user_id}}"><h5>{{post.user_name}}</h5></a></td>
+                <td>
+                <div class="ContAndLikeBtn">
+                    <div class="Post_image">
+                    <img src="{{url_for('static', filename='user_images/')}}{{post.post_picture}}" width="100%" height="100%"/>
+                    </div>
+                    <a class="btn btn-sm btn-primary mt-2" href="/like/{{post.id}}/{{post.user_id}}">Like</a>
+                </div>
+            </td>
+                <td>
+                    <div class="content">
+                        <a href="/post_details/{{post.id}}">
+                        <div>
+                            <p>{{post.post_description}}</p>
+                        </div>
+                    </a>
+                        <div>
+                            <p>{{post.likes_count}} people like this post</p>
+                        </div>
+                    </div>
+                </td>
+                <td><a href="/update_post/{{post.id}}">Update post</a></td>
+                <td><a href="/delete_post/{{post.id}}">Delete post</a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+        
+    </div>
+
+    
+
+</body>
+
+</html>
